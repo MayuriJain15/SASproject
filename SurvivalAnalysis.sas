@@ -23,8 +23,3 @@ run;
 proc corr data = whas500 plots(maxpoints=none)=matrix(histogram);
 var lenfol gender age bmi hr;
 run;
-
-proc lifetest data=whas500;
-time lenfol*fstat(0);
-strata GENDER;
-run; 
