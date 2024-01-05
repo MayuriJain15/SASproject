@@ -1,3 +1,5 @@
+/*Github*/
+
 libname survival "F:\Cliniqua\User Folders\Mayuri\Misc\Self-teaching\Survival Analysis\Notes\Code";
 proc format;
 value gender
@@ -21,3 +23,8 @@ run;
 proc corr data = whas500 plots(maxpoints=none)=matrix(histogram);
 var lenfol gender age bmi hr;
 run;
+
+proc lifetest data=whas500;
+time lenfol*fstat(0);
+strata GENDER;
+run; 
